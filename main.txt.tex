@@ -1,0 +1,165 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Template: Two Column Colour Article
+%
+% Source: http://www.howtotex.com/
+% Feel free to distribute this template, but please keep the
+% referal to howtotex.com.
+% Date: Feb 2011
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% How to use writeLaTeX: 
+%
+% You edit the source code here on the left, and the preview on the
+% right shows you the result within a few seconds.
+%
+% Bookmark this page and share the URL with your co-authors. They can
+% edit at the same time!
+%
+% You can upload figures, bibliographies, custom classes and
+% styles using the files menu.
+%
+% If you're new to LaTeX, the wikibook is a great place to start:
+% http://en.wikibooks.org/wiki/LaTeX
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Preamble
+\documentclass[	DIV=calc,%
+							paper=a4,%
+							fontsize=11pt,%
+							twocolumn]{scrartcl}	 					% KOMA-article class
+
+\usepackage{lipsum}													% Package to create dummy text
+
+\usepackage[english]{babel}										% English language/hyphenation
+\usepackage[protrusion=true,expansion=true]{microtype}				% Better typography
+\usepackage{amsmath,amsfonts,amsthm}					% Math packages
+\usepackage[pdftex]{graphicx}									% Enable pdflatex
+\usepackage[svgnames]{xcolor}									% Enabling colors by their 'svgnames'
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption}	% Custom captions under/above floats
+\usepackage{epstopdf}												% Converts .eps to .pdf
+\usepackage{subfig}													% Subfigures
+\usepackage{booktabs}												% Nicer tables
+\usepackage{fix-cm}													% Custom fontsizes
+\usepackage{hyperref}
+
+
+%%% Custom sectioning (sectsty package)
+\usepackage{sectsty}													% Custom sectioning (see below)
+\allsectionsfont{%															% Change font of al section commands
+	\usefont{OT1}{phv}{b}{n}%										% bch-b-n: CharterBT-Bold font
+	}
+
+\sectionfont{%																% Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%										% bch-b-n: CharterBT-Bold font
+	}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+
+%%% Headers and footers
+\usepackage{fancyhdr}												% Needed to define custom headers/footers
+	\pagestyle{fancy}														% Enabling the custom headers/footers
+\usepackage{lastpage}	
+
+% Header (empty)
+\lhead{}
+\chead{}
+\rhead{}
+% Footer (you may change this to your own needs)
+\lfoot{\footnotesize \texttt{} }
+\cfoot{}
+\rfoot{\footnotesize page \thepage\ of \pageref{LastPage}}	% "Page 1 of 2"
+\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+
+%%% Creating an initial of the very first character of the content
+\usepackage{lettrine}
+\newcommand{\initial}[1]{%
+     \lettrine[lines=3,lhang=0.3,nindent=0em]{
+     				\color{DarkGoldenrod}
+     				{\textsf{#1}}}{}}
+
+
+
+%%% Title, author and date metadata
+\usepackage{titling}															% For custom titles
+
+\newcommand{\HorRule}{\color{DarkGoldenrod}%			% Creating a horizontal rule
+									  	\rule{\linewidth}{1pt}%
+										}
+
+\pretitle{\vspace{-30pt} \begin{flushleft} \HorRule 
+				\fontsize{50}{50} \usefont{OT1}{phv}{b}{n} \color{DarkRed} \selectfont 
+				}
+				
+\title{Financial Analysis In AI}					% Title of your article goes here
+\posttitle{\par\end{flushleft}\vskip 0.5em}
+
+\preauthor{\begin{flushleft}
+					\large \lineskip 0.5em \usefont{OT1}{phv}{b}{sl} \color{DarkRed}}
+\author{Nitish Raj, }											% Author name goes here
+\postauthor{\footnotesize \usefont{OT1}{phv}{m}{sl} \color{Black} 
+					National Institute of Technology,Raipur 								% Institution of author
+					\par\end{flushleft}\HorRule}
+
+\date{8 August 2021 }																			
+
+
+
+%%% Begin document
+\begin{document}
+\maketitle
+\thispagestyle{fancy} 			% Enabling the custom headers/footers for the first page 
+% The first character should be within \initial{}
+
+
+\section*{Introduction}
+Financial market players have always been looking for new ways to reduce costs, improve controls and uncover fresh insights that can drive competitive advantage. Today, with the fast growth of data-driven technologies, they turn their attention to machine learning and artificial intelligence. According to a \href{https://www.gartner.com/en/newsroom/press-releases/2018-12-06-gartner-survey-shows-27-percent-of-finance-departments-expect-to-deploy-artificial-intelligence-by-2020}{ Gartner survey}, 27 percent of financial departments expect to deploy some form of artificial intelligence or machine learning and half of the respondents — predictive analytics by 2020.
+Although many organizations aspire to use AI to improve financial planning and analysis (FP&A), only a few succeed in it, since the technology is not yet built into most FP&A application suites and consequently not well understood.
+Let’s think of cases where AI can significantly help financial departments:
+It is well-known that FP&A embraces a comprehensive quantitative and qualitative analysis of all operational aspects of a company to evaluate its progress and to outline future plans. FP&A Analysts consider such parameters as economic and business trends, past company performance, and potential obstacles.
+
+
+
+\section*{Analysis of AI in Fiancial sector}
+The core of any AI-driven solution is the scrupulous analysis that can reveal insights otherwise concealed from humans. With many parameters that need to be taken into account, human experts can miss a part of the picture or miscalculate the importance of certain factors, whereas AI is known for its ability to work with multiple factors and assign them different weights to achieve sometimes unexpected results.
+AI solutions we typically do for financial organizations concern patterns detection, money flow/transaction analysis, and detecting signs of fraud or suspicious actions.
+
+
+\section*{Forcasting of AI}
+Predictive analysis is probably the most well-known and commonly used field of machine learning in financial departments. It can be applied virtually to all spheres, from forecasting future spending and revenue to predicting human behavior. In our experience, we created algorithms to detect trends, financial indicators and to predict people’s spending habits and lifestyles to take appropriate actions.\par
+Humans do all kinds of work according to a certain pattern that is especially evident in routine tasks. Similarly, all traders have a certain pattern underlying their behavior, showing their attitudes to risk and reward. With the help of AI, we can create a trader’s profile and recommend the next step — to increase the position, wait or cut it down — according to the price movement. Such an AI solution studies the trader’s past trades and creates a trading pattern to predict the trader’s next move mimicking the trader’s behavior. Moreover, the model can predict the opening and closing prices for the trader, and the amount of profit or loss in a given market condition for a trader with a certain behavior pattern.
+
+%\begin{table}
+%\caption{Random table}
+%\centering
+%	\begin{tabular}{llr}
+%		\toprule
+%		\multicolumn{2}{c}{Name} \\
+%		\cmidrule(r){1-2}
+%			First name & Last Name & Grade \\
+%		\midrule
+%			John & Doe & $7.5$ \\
+%			Richard & Miles & $2$ \\
+%		\bottomrule
+%	\end{tabular}
+%\end{table}
+
+
+%\begin{description}
+%	\item[First] This is the first item
+%	\item[Last] This is the last item
+%\end{description}
+
+
+\end{document}
